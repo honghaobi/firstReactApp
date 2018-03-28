@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 class ProjectItem extends Component {
-
-  deleteProject(id){
-    this.props.onDelete(id);
+  deleteProject = () =>{
+    this.props.onDelete(this.props.project.id);
   }
-
   render() {
     return (
       //can only return one div/element.
       <li className="Project">
         <strong>{this.props.project.title}</strong> :  {this.props.project.category}
-        <a href = '#' onClick={this.deleteProject.bind(this, this.props.project.id)}> X </a>
+        <a href = '#' onClick={this.deleteProject}> X </a>
       </li>
     );
   }

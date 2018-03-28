@@ -14,7 +14,7 @@ class AddProject extends Component {
     categories: ['Web Design', 'Web Development', 'Mobile Development']
   }
 
-  handleSubmit(e){
+  handleSubmit = (e) =>{
     e.preventDefault();
     if(this.refs.title.value === ''){
       alert('Title is required')
@@ -32,6 +32,7 @@ class AddProject extends Component {
   }
 
   render() {
+
     let categoryOptions = this.props.categories.map(category => {
       return <option key={category} value={category}>{category}</option>
     });
@@ -40,7 +41,7 @@ class AddProject extends Component {
       //can only return one div/element.
       <div>
         <h3> Add Project </h3>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <label>Title</label><br/>
             <input type="text" ref="title"/>
